@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Totally not Malware{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h3>uwu</h3>
+    <h3>Do you th-think I could have your credit card information, p-please?</h3>
+    <form method="POST">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type="submit" class="btn btn-primary mt-3">Th-thanks</button>
+    </form>
+</div>
+{% endblock content %}
