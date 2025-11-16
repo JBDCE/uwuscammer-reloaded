@@ -5,9 +5,8 @@ from .forms import CreditCardForm
 
 # Create your views here.
 class CreditCardEntry(View):
-    # form = CreditCardForm()
+    form = CreditCardForm()
     def get(self, request):
-        return HttpResponse('Not yet Implemented')
         return render(
             request=request,
             template_name='index.html',

@@ -4,4 +4,13 @@ from .models import CreditCard
 class CreditCardForm(ModelForm):
     class Meta:
         model = CreditCard
-        fields = '__all__'
+        fields = [
+            'cardnum',
+            'expiry',
+            'cvs',
+        ]
+        labels={
+            'cardnum': 'Card number:',
+            'expiry': 'Expiry date:',
+            'cvs': 'Security code:',
+        }
