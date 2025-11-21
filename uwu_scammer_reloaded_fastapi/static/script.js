@@ -1,7 +1,13 @@
 function submit_entry(card_number, expiry_date, security_code) {
-    console.log(card_number);
-    console.log(expiry_date);
-    console.log(security_code);
+    const query_string = "upload?" + $.param({
+        card_num: card_number,
+        expiry: expiry_date,
+        cvs: security_code
+    })
+    $.ajax({
+        url: query_string,
+        type: "POST",
+    });
 }
 
 $(document).ready(function(){
