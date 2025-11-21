@@ -10,3 +10,9 @@ This project aims to implement the same algorithms and logic, but with a web fro
 The target resolution will therefore be 1080p, using whatever fancy UI libraries and animations I can come up with.
 
 For starting out I will loosely follow the Django Youtube Tutorial: https://www.youtube.com/watch?v=0roB7wZMLqI
+
+
+Update: After i while i got fedup with the restrictions of djangos restrictions 
+i pivot to fastapi using their reccomended tech stack. 
+Now loosely following the tutorial: https://www.fastapitutorial.com/blog/fastapi-course/ and https://fastapi.tiangolo.com/tutorial
+
