@@ -1,0 +1,10 @@
+#bait_img {
+    animation: bounceInLeft;
+    animation-duration: 2s;
+}
+
+#entry_form {
+    animation: fadeInRight;
+    animation-delay: 3s;
+    animation-duration: 1s;
+}
