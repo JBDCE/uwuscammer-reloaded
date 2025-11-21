@@ -16,3 +16,10 @@ Update: After i while i got fedup with the restrictions of djangos restrictions
 i pivot to fastapi using their reccomended tech stack. 
 Now loosely following the tutorial: https://www.fastapitutorial.com/blog/fastapi-course/ and https://fastapi.tiangolo.com/tutorial
 
+List of Packages and Tools used in this project
+ - FastApi for the webserver
+ - Jinja2 for rendering templates
+ - Boostrap 5 for Layouting and Entryfields
+ - Animate.css for funsies and attention grabbing animations
+ - ... as an orm for the database
+ - 
