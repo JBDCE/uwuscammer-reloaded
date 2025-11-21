@@ -5,6 +5,9 @@
 
 #entry_form {
     animation: fadeInRight;
-    animation-delay: 3s;
     animation-duration: 1s;
+}
+
+.hidden {
+    display: none;
 }

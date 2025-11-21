@@ -1,3 +1,6 @@
 $(document).ready(function(){
-  console.log("Hello from JQuery!");
+    const entry_form = $('#entry_form');
+    setTimeout(function(){
+        entry_form.removeClass('hidden')
+    }, 500);
 });
