@@ -6,7 +6,51 @@ Main Title
 {% endblock %} 
 
 {% block content %} 
-  <div class="container animate__bounceIn">
-    <h1 class="display-4">Add content here...</h1>
-  </div>
+<div class="container p-3 animate__bounceIn">
+<div class="row">
+<div class="col-4">
+  <img src="/static/bait_img.png" class="img-fluid rounded float-start" alt="...">
+</div>
+<div class="col-8">
+  <label class="form-label">UwU do you th-think i could have your credit card information, p-please?</label>
+  <div class="row">
+      <div class="input-group p-1">
+      <input
+      id="card_num"
+      aria-describedby=""
+      type="text"
+      class="form-control"
+      placeholder="Card Number"
+      >
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-group p-1">
+      <input
+      id="expiry"
+      aria-describedby=""
+      type="text"
+      class="form-control"
+      placeholder="Expiry date"
+      >
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-group p-1">
+      <input
+      id="cvs"
+      aria-describedby=""
+      type="text"
+      class="form-control"
+      placeholder="Security code"
+      >
+      </div>
+    </div>
+    <div class="pt-3">
+      <button class="btn btn-primary btn-lg" type="submit">Th-thanks</button>
+    </div>
+
+</div>
+</div>
+</div>
 {% endblock %}
