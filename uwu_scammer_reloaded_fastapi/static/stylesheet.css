@@ -3,8 +3,13 @@
     animation-duration: 2s;
 }
 
-#entry_form {
+.load_in {
     animation: fadeInRight;
+    animation-duration: 1s;
+}
+
+.sendoff {
+    animation: rotateOutUpRight;
     animation-duration: 1s;
 }
 
