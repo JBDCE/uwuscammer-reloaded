@@ -11,6 +11,7 @@
     <link href="/static/stylesheet.css" rel="stylesheet">
 </head>
 <body>
+    <body style="background-color: {% block background_color %}{% endblock background_color %}"></body>
     {% block content %}
     {% endblock content %}
 

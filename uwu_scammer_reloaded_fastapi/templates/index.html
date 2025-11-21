@@ -5,11 +5,15 @@
 Totally not malware
 {% endblock %} 
 
-{% block content %} 
+{% block background_color %}
+{{ background_color }}
+{% endblock background_color %}
+
+{% block content %}
 <div class="container p-3">
 <div class="row">
 <div class="col-4">
-  <img id="bait_img" src="/static/bait_img.png" class="img-fluid rounded float-start" alt="Good luck getting this OSHA Approved">
+  <img id="bait_img" src="/static/{{ bait_img }}" class="img-fluid rounded float-start" alt="Good luck getting this OSHA Approved">
 </div>
 <div class="container col-8 hidden" id="entry_form">
   <label class="form-label">UwU do you th-think i could have your credit card information, p-please?</label>
