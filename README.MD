@@ -21,5 +21,10 @@ List of Packages and Tools used in this project
  - Jinja2 for rendering templates
  - Boostrap 5 for Layouting and Entryfields
  - Animate.css for funsies and attention grabbing animations
+ - Jquery because im not able to do plain javascript
  - ... as an orm for the database
  - 
+
+To start this application install a pipenv with the included pipfile
+navigate to the uwu_scammer_reloaded_fastapi directory and run
+`fastapi dev main.py`
