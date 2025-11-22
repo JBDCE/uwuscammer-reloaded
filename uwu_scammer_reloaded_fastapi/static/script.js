@@ -24,6 +24,14 @@ function handle_cardnum_input(current_input) {
     if (part3.length > 0) output = output + ' ' + part3;
     part4 = current_input.substring(12,16);
     if (part4.length > 0) output = output + ' ' + part4;
+    // No this is not correct but seeing this result is fun enough
+    if (output.startsWith(4)){
+        $('#card_num-addon').html('<img width=40em src="https://raw.githubusercontent.com/aaronfagan/svg-credit-card-payment-icons/main/flat-rounded/visa.svg"/>');
+    } else if (output.startsWith(5)) {
+        $('#card_num-addon').html('<img width=40em src="https://raw.githubusercontent.com/aaronfagan/svg-credit-card-payment-icons/main/flat-rounded/mastercard.svg"/>');
+    } else {
+        $('#card_num-addon').html('.')
+    }
     return output
 }
 
@@ -44,11 +52,11 @@ $(document).ready(function(){
     const expiry_field = $('#expiry');
     const cvs_field = $('#cvs');
 
-    card_num_field.on("focusout", function(event){
+    card_num_field.on("input", function(event){
         card_num_field.val(handle_cardnum_input(card_num_field.val()));
     });
 
-    expiry_field.on("focusout", function(event){
+    expiry_field.on("input", function(event){
         expiry_field.val(handle_expiry_input(expiry_field.val()));
     });
 
