@@ -9,7 +9,7 @@
 }
 
 .sendoff {
-    animation: rotateOutUpRight;
+    animation: fadeOutRight;
     animation-duration: 1s;
 }
 

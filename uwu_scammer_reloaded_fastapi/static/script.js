@@ -12,12 +12,30 @@ function submit_entry(card_number, expiry_date, security_code) {
     });
 }
 
+// TODO Figure out a way to prevent the cursor jumping when this is done
+function handle_cardnum_input(current_input) {
+    const current_input = current_input.replaceAll(' ', '');
+    let output = '';
+    part1 = current_input.substring(0,4);
+    if (part1.length > 0) output = output + part1;
+    part2 = current_input.substring(4,8);
+    if (part2.length > 0) output = output + ' ' + part2;
+    part3 = current_input.substring(8,12);
+    if (part3.length > 0) output = output + ' ' + part3;
+    part4 = current_input.substring(12,16);
+    if (part4.length > 0) output = output + ' ' + part4;
+    return output
+}
+
 $(document).ready(function(){
     const entry_form = $('#entry_form');
     const submit_button = $('#submit_btn');
     const card_num_field = $('#card_num');
     const expiry_field = $('#expiry');
     const cvs_field = $('#cvs');
+    card_num_field.on("input", function(event){
+        card_num_field.val(handle_cardnum_input(card_num_field.val()))
+    });
     submit_button.on("click", function(event){
         submit_entry(
             card_num_field.val(),
