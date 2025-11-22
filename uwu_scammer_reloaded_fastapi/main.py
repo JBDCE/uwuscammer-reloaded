@@ -1,26 +1,13 @@
 from random import choice
-from typing import Annotated
 
-from fastapi import FastAPI, Request, Depends
+from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
-from sqlmodel import SQLModel, Field, Session, create_engine, select
+from model.CreditCard import CreditCard
+from model.DatabaseHelper import create_db_and_tables, SessionDep
 
-
-class CreditCard(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
-    card_num: str
-    expiry_date: str
-    cvs: int
-
-sqlite_url = f"sqlite:///database.db"
-connect_args = {"check_same_thread": False}
-engine = create_engine(sqlite_url, connect_args=connect_args)
-
-def create_db_and_tables():
-    SQLModel.metadata.create_all(engine)
 
 def lifespan(app):
     create_db_and_tables()
@@ -33,7 +20,6 @@ app.mount(
     StaticFiles(directory="static"),
     name="static"
 )
-
 templates = Jinja2Templates(directory="templates")
 
 
@@ -56,20 +42,13 @@ async def main_page(request: Request):
     )
 
 
-# No idea what any of this session business is doing...
-def get_session():
-    with Session(engine) as session:
-        yield session
-SessionDep = Annotated[Session, Depends(get_session)]
-
-
 @app.post("/upload")
 async def upload_details(credit_card: CreditCard, session: SessionDep):
     print(credit_card)
     # Validate Client side inputs
-    CreditCard.model_validate(credit_card)
+    validated = CreditCard.model_validate(credit_card)
     # Write Result to Database
-    session.add(credit_card)
+    session.add(validated)
     session.commit()
-    # TODO Tell client about success maybe
+    # TODO Tell client about success maybe. But why?
     return
