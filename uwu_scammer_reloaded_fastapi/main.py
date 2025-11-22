@@ -22,12 +22,12 @@ engine = create_engine(sqlite_url, connect_args=connect_args)
 def create_db_and_tables():
     SQLModel.metadata.create_all(engine)
 
-def get_session():
-    with Session(engine) as session:
-        yield session
+def lifespan(app):
+    create_db_and_tables()
+    yield
+    # Put code in here to be run when shutting down
 
-SessionDep = Annotated[Session, Depends(get_session)]
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 app.mount(
     "/static",
     StaticFiles(directory="static"),
@@ -36,16 +36,15 @@ app.mount(
 
 templates = Jinja2Templates(directory="templates")
 
-bait_to_color = {
-    'bait_img.png': '#81746f',
-    'way_too_large.png': '#fec97b',
-    'hoarse.png': '#d2c1f0',
-    'pink.png': "#f3bfd9",
-}
-
 
 @app.get("/", response_class=HTMLResponse)
 async def main_page(request: Request):
+    bait_to_color = {
+        'bait_img.png': '#81746f',
+        'way_too_large.png': '#fec97b',
+        'hoarse.png': '#d2c1f0',
+        'pink.png': "#f3bfd9",
+    }
     bait_img, background_color = choice(list(bait_to_color.items()))
     return templates.TemplateResponse(
         request=request,
@@ -57,23 +56,20 @@ async def main_page(request: Request):
     )
 
 
+# No idea what any of this session business is doing...
+def get_session():
+    with Session(engine) as session:
+        yield session
+SessionDep = Annotated[Session, Depends(get_session)]
+
+
 @app.post("/upload")
-async def upload_details(card_num, expiry, cvs, session: SessionDep):
-    # TODO Validate Client side inputs
-    credit_card = CreditCard(
-        card_num=card_num,
-        expiry_date=expiry,
-        cvs=cvs,
-    )
-    # TODO Write Result to Database
+async def upload_details(credit_card: CreditCard, session: SessionDep):
     print(credit_card)
+    # Validate Client side inputs
     CreditCard.model_validate(credit_card)
-    # TODO Tell client about success maybe
+    # Write Result to Database
     session.add(credit_card)
     session.commit()
+    # TODO Tell client about success maybe
     return
-
-@app.on_event("startup")
-def on_startup():
-    create_db_and_tables()
-
