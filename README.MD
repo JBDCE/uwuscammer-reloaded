@@ -1,30 +1,37 @@
 # UwU Scammer Reloaded
 
-This is a rebuild of my 2020 one-night code project based on a YouTube thumbnail, updated for 2025.
+This is an updated version of my 2020 one-night code project based on a YouTube thumbnail, rebuilt for 2025.
 
-The idea is a simple phishing front end in which an anime character politely asks the user for their credit card information.
+![image](./inspiration.png)
 
-The original project was implemented as a Java Swing application, as this was the front-end with which I was most comfortable at the time.
+The concept is a straightforward phishing interface in which an anime character politely requests the user's credit card details.
 
-This project aims to implement the same algorithms and logic, but with a web front page designed around Django.
-The target resolution will therefore be 1080p, using whatever fancy UI libraries and animations I can come up with.
+The original project was implemented as a Java Swing application because it was the front end with which I was most comfortable at the time.
 
-For starting out I will loosely follow the Django Youtube Tutorial: https://www.youtube.com/watch?v=0roB7wZMLqI
+The aim of this project is to implement the same algorithms and logic, but with a web front page designed using Django.
+The target resolution will therefore be 1080p, and I will use whatever fancy UI libraries and animations I can come up with.
+
+To begin with, I will loosely follow the Django YouTube tutorial. https://www.youtube.com/watch?v=0roB7wZMLqI
 
 
-Update: After i while i got fedup with the restrictions of djangos restrictions 
-i pivot to fastapi using their reccomended tech stack. 
-Now loosely following the tutorial: https://www.fastapitutorial.com/blog/fastapi-course/ and https://fastapi.tiangolo.com/tutorial
+## Update:
+After a while, I became frustrated with the restrictions of Django.
+I switched to FastAPI, (mostly) using their recommended tech stack.
+I am now loosely following the tutorial. https://www.fastapitutorial.com/blog/fastapi-course/ and https://fastapi.tiangolo.com/tutorial
 
-List of Packages and Tools used in this project
- - FastApi for the webserver
- - Jinja2 for rendering templates
- - Boostrap 5 for Layouting and Entryfields
- - Animate.css for funsies and attention grabbing animations
- - Jquery because im not able to do plain javascript
- - ... as an orm for the database
- - 
+This is a list of the packages and tools used in this project.
+ - FastAPI for the web server
+ - Jinja2 for template rendering
+ - Bootstrap 5 for layout and entry fields
+ - Animate.css for fun and attention-grabbing animations
+ - jQuery because I'm unable to use plain JavaScript
+ - Pydantic as an ORM for the database
+
 
 To start this application install a pipenv with the included pipfile
-navigate to the uwu_scammer_reloaded_fastapi directory and run
+navigate to the uwu_scammer_reloaded_fastapi directory and run the main.py file
+
+### Or as a play by play:
+`pipenv shell`
+`cd uwuscammer_reloaded_fastapi`
 `fastapi dev main.py`
