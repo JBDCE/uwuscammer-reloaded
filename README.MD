@@ -33,5 +33,13 @@ navigate to the uwu_scammer_reloaded_fastapi directory and run the main.py file
 
 ### Or as a play by play:
 `pipenv shell`
+
 `cd uwuscammer_reloaded_fastapi`
+
 `fastapi dev main.py`
+
+Then open your favourite browser and take a look at this (terrible) marvel of engineering:
+http://localhost:8000/
+and you will then be greeted by:
+
+![result](./result.png)
