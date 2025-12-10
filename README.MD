@@ -32,6 +32,8 @@ To start this application install a pipenv with the included pipfile
 navigate to the uwu_scammer_reloaded_fastapi directory and run the main.py file
 
 ### Or as a play by play:
+`python -m pip install pipenv`  if even pipenv is missing
+
 `pipenv shell`
 
 `cd uwuscammer_reloaded_fastapi`
