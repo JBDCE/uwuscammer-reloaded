@@ -25,7 +25,7 @@ This is a list of the packages and tools used in this project.
  - Bootstrap 5 for layout and entry fields
  - Animate.css for fun and attention-grabbing animations
  - jQuery because I'm unable to use plain JavaScript
- - Pydantic as an ORM for the database
+ - Pydantic / SQLAlchemy as an ORM for the database
 
 
 To start this application install a pipenv with the included pipfile
