@@ -8,6 +8,7 @@ django = "*"
 fastapi = {extras = ["standard"], version = "*"}
 jinja2 = "*"
 sqlmodel = "*"
+sniffio = "*"
 
 [dev-packages]
 
