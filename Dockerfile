@@ -1,11 +1,16 @@
-FROM python:3.10-slim
+FROM python:3.14-slim
 
 WORKDIR /app
-COPY requirements.txt .
-COPY model ./model
-COPY static ./static
-COPY templates ./templates
-COPY main.py .
-RUN pip install --no-cache-dir -r requirements.txt
+
+COPY Pipfile .
+COPY Pipfile.lock .
+COPY uwu_scammer_reloaded_fastapi/model ./model
+COPY uwu_scammer_reloaded_fastapi/static ./static
+COPY uwu_scammer_reloaded_fastapi/templates ./templates
+COPY uwu_scammer_reloaded_fastapi/main.py .
+
+RUN pip install pipenv
+RUN pipenv install --deploy --system
+
 EXPOSE 8000
 CMD ["fastapi", "run", "main.py"]
