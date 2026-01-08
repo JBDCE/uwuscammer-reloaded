@@ -4,10 +4,10 @@ WORKDIR /app
 
 COPY Pipfile .
 COPY Pipfile.lock .
-COPY uwu_scammer_reloaded_fastapi/model ./model
-COPY uwu_scammer_reloaded_fastapi/static ./static
-COPY uwu_scammer_reloaded_fastapi/templates ./templates
-COPY uwu_scammer_reloaded_fastapi/main.py .
+COPY model ./model
+COPY static ./static
+COPY templates ./templates
+COPY main.py .
 
 RUN pip install pipenv
 RUN pipenv install --deploy --system
