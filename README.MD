@@ -43,5 +43,6 @@ and you will then be greeted by:
 ### Docker Instructions
 To Build the docker container for the fastapi implementation use:
 `docker build -t uwuscammer-reloaded .`
+
 To run the built docker afterwards you can use this command:
 `docker run -p 8000:8000 uwuscammer-reloaded:latest`
