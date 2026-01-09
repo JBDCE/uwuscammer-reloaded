@@ -8,16 +8,10 @@ The concept is a straightforward phishing interface in which an anime character 
 
 The original project was implemented as a Java Swing application because it was the front end with which I was most comfortable at the time.
 
-The aim of this project is to implement the same algorithms and logic, but with a web front page designed using Django.
+The aim of this project is to implement the same algorithms and logic. Using FastAPI and (mostly) using their recommended tech stack.
 The target resolution will therefore be 1080p, and I will use whatever fancy UI libraries and animations I can come up with.
 
-To begin with, I will loosely follow the Django YouTube tutorial. https://www.youtube.com/watch?v=0roB7wZMLqI
-
-
-## Update:
-After a while, I became frustrated with the restrictions of Django.
-I switched to FastAPI, (mostly) using their recommended tech stack.
-I am now loosely following the tutorial. https://www.fastapitutorial.com/blog/fastapi-course/ and https://fastapi.tiangolo.com/tutorial
+I am loosely following the tutorial. https://www.fastapitutorial.com/blog/fastapi-course/ and https://fastapi.tiangolo.com/tutorial
 
 This is a list of the packages and tools used in this project.
  - FastAPI for the web server
@@ -49,5 +43,6 @@ and you will then be greeted by:
 ### Docker Instructions
 To Build the docker container for the fastapi implementation use:
 `docker build -t uwuscammer-reloaded .`
+
 To run the built docker afterwards you can use this command:
 `docker run -p 8000:8000 uwuscammer-reloaded:latest`
